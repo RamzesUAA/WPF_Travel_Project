@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Lab_5.View.ClientUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lab_5.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Height="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid
+            Name="DataGridClients" Width="Auto" Grid.Row="0"
+            ItemsSource="{Binding Path=Clients}"
+            ScrollViewer.CanContentScroll="True"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="1*" Header="First Name" Binding="{Binding Path=FirstName, Mode=TwoWay}"></DataGridTextColumn>
+                <DataGridTextColumn Width="1*" Header="Last Name" Binding="{Binding Path=LastName, Mode=TwoWay}"></DataGridTextColumn>
+                <DataGridTextColumn Width="1*" Header="Passport Number" Binding="{Binding Path=PassportNumber, Mode=TwoWay}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</UserControl>
